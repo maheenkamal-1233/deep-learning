@@ -1,123 +1,19 @@
-# deep-learningFacial Expression Recognition and Affective Computing
-Project Overview
+Facial Expression & Affective Computing
 
-This project implements a deep learning system for recognizing facial expressions and predicting emotional states (valence and arousal) from facial images. It uses multi-task learning to simultaneously predict:
-
-Expression classification – discrete emotion labels such as happy, sad, angry, etc.
-
-Valence and Arousal regression – continuous emotional dimensions.
-
-The system leverages pre-trained CNN architectures (VGG16, ResNet50, EfficientNetB0) and a custom CNN to compare performance.
+This project uses Convolutional Neural Networks (CNNs) to detect facial expressions and compute valence (positivity/negativity) and arousal (intensity) from images. Multiple CNN architectures like VGG, ResNet, and MobileNet are compared for performance.
 
 Features
 
-Multi-task prediction: expression classification + valence-arousal regression.
+Recognizes basic emotions: happy, sad, angry, surprise, fear, disgust, neutral
 
-Supports flexible datasets: images, CSV annotations, or .npy files.
+Computes valence and arousal for nuanced affective analysis
 
-Preprocessing includes resizing, normalization, and augmentation.
+Evaluates different CNN models for accuracy and performance
 
-Training supports early stopping, learning rate adjustment, and checkpoint saving.
+Dataset
 
-Comprehensive evaluation metrics:
-
-Classification: Accuracy, F1-score, Cohen’s Kappa, ROC-AUC
-
-Regression: RMSE, Pearson correlation, CCC, Sign Agreement
-
-Visualization of training curves, confusion matrices, and sample predictions.
-
-Modular code design for easy experimentation with different architectures.
-
-Installation
-
-Clone the repository:
-
-git clone <repository-url>
-cd facial-expression-recognition
-
-
-Create a Python virtual environment (recommended):
-
-python -m venv venv
-source venv/bin/activate    # Linux/Mac
-venv\Scripts\activate       # Windows
-
-
-Install required packages:
-
-pip install -r requirements.txt
-
-
-Dependencies include:
-
-Python 3.8+
-
-TensorFlow / Keras
-
-NumPy
-
-Pandas
-
-OpenCV
-
-Matplotlib / Seaborn
-
-Scikit-learn
+Uses annotated facial image datasets with expression, valence, and arousal labels.
 
 Usage
 
-Prepare Dataset
-
-Place images in the images/ directory.
-
-Provide annotations in CSV or .npy format (expressions.npy, valence.npy, arousal.npy).
-
-Preprocess Data
-
-Run the dataset loader to resize, normalize, and split data.
-
-Train Model
-
-Choose a model: VGG16, ResNet50, EfficientNetB0, or CustomCNN.
-
-Configure training parameters: batch size, epochs, learning rate.
-
-Start training:
-
-python train_model.py --model VGG16 --epochs 50
-
-
-Evaluate Model
-
-Evaluate metrics on test set:
-
-python evaluate_model.py --model VGG16
-
-
-Visualize Results
-
-Plot training curves and confusion matrices:
-
-python visualize_results.py --model VGG16
-
-
-valuation Metrics
-
-Classification
-
-Accuracy, F1-score, Cohen’s Kappa, ROC-AUC
-
-Regression
-
-RMSE, Pearson correlation, Concordance Correlation Coefficient (CCC), Sign Agreement
-
-Multi-Model Comparison
-
-Pre-trained models converge faster due to transfer learning.
-
-Custom CNN allows multi-scale feature extraction and attention mechanisms.
-
-Data augmentation reduces overfitting and improves generalization.
-
-Side-by-side metrics comparison identifies the best model for both classification and regression tasks.
+Can be applied in research, human-computer interaction, emotion analysis, and affective computing applications.
